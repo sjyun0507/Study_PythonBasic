@@ -1,9 +1,8 @@
 # 데이터를 저장 할 때마다 변수를 생성해야 한다
 # 컬렉션 : 데이터들을 한개의 변수로 저장할 수 있도록 만들어진 자료형
-# 기본 컬렉션 4가지
-# list, tuple, set, dict
+# 기본 컬렉션 4가지 : list, tuple, set, dict
 
-# list
+###### list ######
 # 리스트에서도 각각의 데이터는 ,를 기준으로 구분한다. 컬렉션에서 저장하고 있는 각각의 데이터는 요소라고도 한다.
 
 li = []
@@ -62,7 +61,7 @@ print(score) #[80, 70]
 
 del score #변수 자체를 삭제
 
-# tuple 튜플
+###### tuple 튜플 ######
 # 소괄호()를 사용하고, tuple() 형변환 함수로 생성
 # 리스트와 마찬가지로 각 요소에 인덱스가 부여되고, 인덱싱, 슬라이싱이 가능하다.
 # 한번 만들어지면 저장된 데이터 값을 변경할 수 없다.
@@ -97,7 +96,7 @@ print(li *3) #[1, 2, 3, 1, 2, 3, 1, 2, 3]
 
 print('*'*7) #*******
 
-# set 세트
+###### set 세트 ######
 # 수학의 집합 개념을 자료형으로 구현한 컬렉션 데이터
 # 저장된 값들의 순서(인덱스)를 가지지 않는다. 인덱스가 없으므로 인덱싱과 슬라이싱이 불가능하다
 # 중괄호{} 또는 set() 형변환 함수를 이용해서 생성한다.
@@ -128,3 +127,45 @@ print(s2) #{1, 2, 3, 4, 5, 9, 13, 15}
 
 s2.discard(5)
 print(s2) #{1, 2, 3, 4, 9, 13, 15}
+
+###### dict 딕셔너리 (dictionary) ---> map ######
+# 사전처럼 데이터가 이름(key) 와 의미(value)로 이루어진다. 인덱스가 존재하지 않는다. 대신 key값을 이용해서 인덱싱과 비슷한 결과를 얻는다.
+
+# dict생성
+# 중괄호 {}를 사용하고, dict() 형변환 함수
+s = {1,2,3}
+#dict : {key1: value1, key2 : value2}
+
+di = {"a" : "apple", "b" :"banana"}
+# :를 기준으로 왼쪽 data가 key 값이 되고, 오른쪽 data가 value 값이 된다. key와 value 한 쌍의 묶음이 1개의 요소로 취급 된다.
+# 값의 접근(사용)
+print(di) #{'a': 'apple', 'b': 'banana'}
+
+print(di['a']) #apple
+
+# get() 메서드
+print(di.get('c','cat')) #cat
+print(di) #{'a': 'apple', 'b': 'banana'}
+# key가 없는 데이터 라면 default로 입력한 값을 반환해준다
+# default가 지정되지 않았다면, 기본적으로 None을 반환한다.
+# default를 지정해도 key값이 dict에 존재하면, key에 맞는 value가 반환된다.
+
+di.setdefault('c','dog')
+print(di) #{'a': 'apple', 'b': 'banana', 'c': 'dog'}
+di.setdefault('c','cat')
+print(di) #{'a': 'apple', 'b': 'banana', 'c': 'dog'}
+di.update({'d':"delete",'e':"enter"})
+print(di) #{'a': 'apple', 'b': 'banana', 'c': 'dog', 'd': 'delete', 'e': 'enter'}
+
+print(di.keys())   #dict_keys(['a', 'b', 'c', 'd', 'e'])
+print(di.values()) #dict_values(['apple', 'banana', 'dog', 'delete', 'enter'])
+print(di.items())  #dict_items([('a', 'apple'), ('b', 'banana'), ('c', 'dog'), ('d', 'delete'), ('e', 'enter')])
+
+di.pop('d')
+print(di) #{'a': 'apple', 'b': 'banana', 'c': 'dog', 'e': 'enter'}
+del di['e']
+print(di) #{'a': 'apple', 'b': 'banana', 'c': 'dog'}
+
+di.clear()
+print(di) #{}
+
