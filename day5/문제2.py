@@ -8,3 +8,4 @@ while dan <= 9:
         print(f'{dan} X {num} = {dan * num}')
         num += 1
     dan += 1
+
