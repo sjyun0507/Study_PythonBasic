@@ -39,9 +39,17 @@ print(s.upper()) #PYTHON
 print(s.lower()) #python
 print(s.capitalize()) #Python
 
+'''
+문자열.join(iterable)
+전달한 iterable의 각 요소 사이에 문자열을 추가하여 새로운 문자열을 만드는 메서드
+'''
 print('-'.join("python")) #p-y-t-h-o-n
 print('+'.join(['a','b','c','d'])) #a+b+c+d
 print(''.join(['a','b','c','d'])) #abcd
+
+li = ['1','2','3','4','5']
+print('-'.join(li)) #1-2-3-4-5
+
 
 '''
 split(구분자)
